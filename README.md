@@ -10,12 +10,13 @@ Requirements
 Instructions for Windows
 Install
 1. Double click build_container.bat
-2. To stop just double click stop.bat
+2. Execute deploy_nosql.bat to install Oracle NoSQL
+3. To stop just double click stop.bat
 
-Relaunch docker instance
+Relaunch docker instance (After HOST machine restart)
 1. Double click start.bat
 
-Reset Environment
+Reset Environment (Deletes image and container)
 1. Double click delete_image_container.bat
 
 
