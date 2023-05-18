@@ -22,8 +22,12 @@ Linux is supported, but I still dont have the automated commands feel free to pa
 
 ## Useful Links
 NoSQL Examples from Dario: https://github.com/dario-vega
+
 Java "No Login" Download:  https://gist.github.com/wavezhang/ba8425f24a968ec9b2a8619d7c2d86a6
+
 Additional  NoSQL Docker:  https://github.com/oracle/docker-images/blob/main/NoSQL/README.md
+
+
 
 
 <sup>1</sup> Non-Secure Store for Educative purposes.
