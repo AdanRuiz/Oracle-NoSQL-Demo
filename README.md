@@ -1,6 +1,8 @@
 # Oracle NoSQL 1x3 Demo
 
-**With this repository, it is possible to install Oracle NoSQL 1x3 in a single docker instance.**
+**Oracle NoSQL 1x3 demo in a single docker instance<sup>1</sup>.**
+
+Linux is supported, but I still dont have the automated commands feel free to parse bat files into sh files.
 
 ## Requirements
 1. Have installed Rancher Desktop (for Oracle Developers) or Docker (public).
@@ -18,5 +20,10 @@
 ### Reset Environment (Deletes image and container)
 1. Double click delete_image_container.bat
 
+## Useful Links
+NoSQL Examples from Dario: https://github.com/dario-vega
+Java "No Login" Download:  https://gist.github.com/wavezhang/ba8425f24a968ec9b2a8619d7c2d86a6
+Additional  NoSQL Docker:  https://github.com/oracle/docker-images/blob/main/NoSQL/README.md
 
-Linux is supported, but I still dont have the automated commands feel free to parse bat files into sh files.
+
+<sup>1</sup> Non-Secure Store for Educative purposes.
