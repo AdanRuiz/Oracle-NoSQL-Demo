@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "################# 2. clean #####################"
 pkill java
 rm -rf $KVROOT1 $KVROOT2 $KVROOT3
