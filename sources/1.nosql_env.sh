@@ -17,7 +17,7 @@ export KVPORT3=7000
 
 export KVSTOSIZE="3500-MB"
 
-export KVMEMORY=1000
+export KVMEMORY=256
 
 
 echo $KVROOT
