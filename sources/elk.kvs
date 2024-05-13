@@ -1,0 +1,3 @@
+plan change-parameter -global -wait -params collectorEnabled=true
+plan change-parameter -global -wait -params collectorInterval="30 s"
+plan change-parameter -global -wait -params collectorStoragePerComponent="50 MB"

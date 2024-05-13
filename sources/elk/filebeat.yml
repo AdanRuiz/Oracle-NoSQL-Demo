@@ -1,0 +1,132 @@
+#=========================== Filebeat prospectors =============================
+
+filebeat.inputs:
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/sn*/collector/rnOp*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true  
+  fields:
+    type: kvRNOpStats
+  tags: ["kvstore", "stats", "rn", "operation"]
+- input_type: log
+  paths:
+    -/path/of/kvroot/*/sn*/collector/rnException*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true  
+  fields:
+    type: kvRNExceptionStats
+  tags: ["kvstore", "stats", "rn", "exception"]
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/sn*/collector/rnEnv*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true  
+  fields:
+    type: kvRNEnvStats
+  tags: ["kvstore", "stats", "rn", "environment"]
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/sn*/collector/rnEvent*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true  
+  fields:
+    type: kvComponentStates
+  tags: ["kvstore", "events", "rn", "state"]
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/sn*/collector/plan*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true
+  fields:
+    type: kvPlanStats
+  tags: ["kvstore", "events", "admin", "plan"]
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/sn*/collector/ping*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true
+  fields:
+    type: kvPingStats
+  tags: ["kvstore", "stats", "ping"]
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/sn*/collector/rnJVM*.json*
+  exclude_files: ['\.lck$']
+  fields_under_root: true
+  fields:
+    type: kvRNJVMStats
+  tags: ["kvstore", "stats", "rn", "jvm"]
+- input_type: log
+  paths:
+    - /path/of/kvroot/*/log/*.log*
+    - /path/of/kvroot/rnlog*/*.log*
+  exclude_files: ['\.lck$']
+  fields_under_root: true
+  fields:
+    type: kvLogs
+  tags: ["kvstore", "log"]
+  multiline.pattern: '^(\d{4})-(\d{2})-(\d{2}) (\d{2})\:(\d{2})\:(\d{2})\.(\d{3}) UTC ((EVENT)|(METRIC)|(SEC_WARNING)|(SEC_INFO)|(SEVERE)|(WARNING)|(INFO)|(CONFIG)|(FINE)|(FINER)|(FINEST)) '
+  multiline.negate: true
+  multiline.match: after
+
+processors:
+ - drop_fields:
+     fields: ["offset", "input_type"]
+
+
+#================================ General =====================================
+
+# The name of the shipper that publishes the network data. It can be used to group
+# all the transactions sent by a single shipper in the web interface.
+#name:
+
+# The tags of the shipper are included in their own field with each
+# transaction published.
+#tags: ["service-X", "web-tier"]
+
+# Optional fields that you can specify to add additional information to the
+# output.
+#fields:
+#  env: staging
+
+#================================ Outputs =====================================
+
+# Configure what outputs to use when sending the data collected by the beat.
+# Multiple outputs may be used.
+
+#-------------------------- Elasticsearch output ------------------------------
+#output.elasticsearch:
+  # Array of hosts to connect to.
+  #hosts: ["elk-node1:9200"]
+
+  # Optional protocol and basic auth credentials.
+  #protocol: "https"
+  #username: "elastic"
+  #password: "changeme"
+
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+  # The Logstash hosts
+  hosts: "LOGSTASH_HOST:5044"
+
+  # Optional SSL. By default is off.
+  # List of root certificates for HTTPS server verifications
+  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+
+  # Certificate for SSL client authentication
+  #ssl.certificate: "/etc/pki/client/cert.pem"
+
+  # Client Certificate Key
+  #ssl.key: "/etc/pki/client/cert.key"
+
+#================================ Logging =====================================
+
+# Sets log level. The default log level is info.
+# Available log levels are: critical, error, warning, info, debug
+#logging.level: debug
+
+# At debug level, you can selectively enable logging only for some components.
+# To enable all selectors use ["*"]. Examples of other selectors are "beat",
+# "publish", "service".
+#logging.selectors: ["*"]

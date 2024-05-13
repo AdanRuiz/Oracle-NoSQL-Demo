@@ -1,1 +1,1 @@
-docker exec -it oracle-nosql bash
+docker exec -it oracle-nosql bash -c "su - ons"
