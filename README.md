@@ -31,3 +31,5 @@ Additional  NoSQL Docker:  https://github.com/oracle/docker-images/blob/main/NoS
 
 
 <sup>1</sup> Non-Secure Store for Educative purposes.
+
+Regards

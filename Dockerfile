@@ -19,7 +19,7 @@ RUN echo "$LINUX_USR ALL=(ALL:ALL) ALL" | EDITOR='tee -a' visudo
 RUN echo "${LINUX_USR}:${LINUX_PASS}" | chpasswd
 RUN echo "root:${LINUX_PASS}" | chpasswd
 
-#JDK INSTALL
+#JDK INSTALL x86
 RUN wget https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248218_ce59cff5c23f4e2eaf4e778a117d4c5b -O jdk8.rpm
 RUN yum install -y jdk8.rpm
 
