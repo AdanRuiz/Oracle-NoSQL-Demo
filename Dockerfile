@@ -20,15 +20,15 @@ RUN echo "${LINUX_USR}:${LINUX_PASS}" | chpasswd
 RUN echo "root:${LINUX_PASS}" | chpasswd
 
 #JDK INSTALL x86
-#RUN wget https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248218_ce59cff5c23f4e2eaf4e778a117d4c5b -O jdk8.rpm
-#RUN yum install -y jdk8.rpm
+RUN wget https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248218_ce59cff5c23f4e2eaf4e778a117d4c5b -O jdk8.rpm
+RUN yum install -y jdk8.rpm
 
 #JDK INSTALL AARCH64
-RUN wget https://download.oracle.com/java/22/latest/jdk-22_linux-aarch64_bin.rpm
-RUN yum install -y jdk-22_linux-aarch64_bin.rpm
+#RUN wget https://download.oracle.com/java/22/latest/jdk-22_linux-aarch64_bin.rpm
+#RUN yum install -y jdk-22_linux-aarch64_bin.rpm
 
 
-RUN wget https://download.oracle.com/graalvm/22/latest/graalvm-jdk-22_linux-aarch64_bin.tar.gz
+#RUN wget https://download.oracle.com/graalvm/22/latest/graalvm-jdk-22_linux-aarch64_bin.tar.gz
 
 #ONS
 RUN mkdir -p /u02/setup
