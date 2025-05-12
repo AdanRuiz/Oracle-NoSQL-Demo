@@ -15,6 +15,8 @@ export KVPORT1=5000
 export KVPORT2=6000
 export KVPORT3=7000
 
+export KVPROXYPORT=8985
+
 export KVSTOSIZE="3500-MB"
 
 export KVMEMORY=256
@@ -30,6 +32,6 @@ echo $KVSTORE
 alias kv_sql="java -jar $KVHOME/lib/sql.jar -helper-hosts $KVHOST:$KVPORT1 -store $KVSTORE "
 alias kv_admin="java -jar $KVHOME/lib/kvstore.jar runadmin -port $KVPORT1 -host $KVHOST"
 alias kv_ping="java -jar $KVHOME/lib/kvstore.jar ping  -port $KVPORT1 -host $KVHOST"
-alias kv_proxy="java -jar $KVHOME/lib/httpproxy.jar -helperHosts $KVHOST:$KVPORT1,$KVHOST:$KVPORT2,$KVHOST:$KVPORT3 -storeName $KVSTORE -httpPort 8985 -verbose true"
+alias kv_proxy=" echo 'http://localhost:'$KVPROXYPORT ; java -jar $KVHOME/lib/httpproxy.jar -helperHosts $KVHOST:$KVPORT1,$KVHOST:$KVPORT2,$KVHOST:$KVPORT3 -storeName $KVSTORE -httpPort $KVPROXYPORT -verbose true;"
 alias kv_stop="java -jar $KVHOME/lib/kvstore.jar stop -root $KVROOT1;java -jar $KVHOME/lib/kvstore.jar stop -root $KVROOT2;java -jar $KVHOME/lib/kvstore.jar stop -root $KVROOT3;"
 alias kv_start="java -jar $KVHOME/lib/kvstore.jar start -root $KVROOT1 & disown;java -jar $KVHOME/lib/kvstore.jar start -root $KVROOT2 & disown;java -jar $KVHOME/lib/kvstore.jar start -root $KVROOT3 & disown;"
