@@ -2,20 +2,20 @@
 
 **Oracle NoSQL 1x3 demo in a single docker instance<sup>1</sup>.**
 
-Linux is supported, but I still dont have the automated commands feel free to parse bat files into sh files.
+Linux is supported, but I still dont have the automated commands feel free to launch bat files in sh .
 
 ## Requirements
-1. Have installed Rancher Desktop (for Oracle Developers) or Docker (public).
-2. Clone or download project files
+* Have installed Rancher Desktop (for Oracle Developers) or Docker (public).
+* Clone or download project files
+* Check for LF in sh files in sources folder
 
 ## Instructions for Windows
 ### Install
 1. Double click build_container.bat
-2. Execute deploy_nosql.bat to install Oracle NoSQL
-3. To stop just double click stop.bat
+2. Execute start.bat
+3. Execute deploy_nosql.bat to install Oracle NoSQL
 
-### Relaunch docker instance (After HOST machine restart)
-1. Double click start.bat
+To stop just double click stop.bat
 
 ### Reset Environment (Deletes image and container)
 1. Double click delete_image_container.bat
@@ -57,3 +57,4 @@ Additional  NoSQL Docker:  https://github.com/oracle/docker-images/blob/main/NoS
 <sup>1</sup> Non-Secure Store for Educative purposes.
 
 Regards
+Adan
