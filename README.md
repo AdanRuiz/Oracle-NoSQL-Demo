@@ -23,9 +23,9 @@ Linux is supported, but I still dont have the automated commands feel free to pa
 ## Testing Install
 1) Launch start.bat 
 2) Execute kv_ping
-3) Execute kv_admin 
+3) Execute kv_admin
     3.1) SHOW TOPOLOGY
-4) Execute kv_sql
+5) Execute kv_sql
     4.1) Create Database:
             CREATE TABLE sequence(
                 seqId INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
@@ -36,7 +36,7 @@ Linux is supported, but I still dont have the automated commands feel free to pa
     4.2) Insert data:
             INSERT INTO sequence (host, numTest) values('localhost',0)
             INSERT INTO sequence (host, numTest) values('192.168.1.254',0)
-5) Test by app
+6) Test by app
     5.1) Install Visual Studio Code Oracle NoSQL Extension
     5.2) Create a new connection
     5.3) Host: 
