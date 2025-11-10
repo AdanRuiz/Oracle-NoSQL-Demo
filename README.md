@@ -20,6 +20,30 @@ Linux is supported, but I still dont have the automated commands feel free to pa
 ### Reset Environment (Deletes image and container)
 1. Double click delete_image_container.bat
 
+## Testing Install
+1) Launch start.bat 
+2) Execute kv_ping
+3) Execute kv_admin 
+    3.1) SHOW TOPOLOGY
+4) Execute kv_sql
+    4.1) Create Database:
+            CREATE TABLE sequence(
+                seqId INTEGER GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1),
+                host STRING,
+                numTest INTEGER,
+                PRIMARY KEY (seqId)
+            )
+    4.2) Insert data:
+            INSERT INTO sequence (host, numTest) values('localhost',0)
+            INSERT INTO sequence (host, numTest) values('192.168.1.254',0)
+5) Test by app
+    5.1) Install Visual Studio Code Oracle NoSQL Extension
+    5.2) Create a new connection
+    5.3) Host: 
+        http://localhost:8985
+    5.4) Namespace must be empty
+
+
 ## Useful Links
 NoSQL Examples from Dario: https://github.com/dario-vega
 
