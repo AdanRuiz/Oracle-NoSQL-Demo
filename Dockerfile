@@ -24,7 +24,7 @@ RUN wget https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248218_ce59c
 RUN yum install -y jdk8.rpm
 
 #JDK INSTALL AARCH64
-#RUN wget https://download.oracle.com/java/22/latest/jdk-22_linux-aarch64_bin.rpm
+#RUN wget https://download.oracle.com/java/22/archive/jdk-22_linux-aarch64_bin.rpm
 #RUN yum install -y jdk-22_linux-aarch64_bin.rpm
 
 
